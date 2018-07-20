@@ -2,7 +2,6 @@
 namespace App\Controller;
 
 use Cake\Validation\Validator;
-use Cake\Validation\ValidationSet;
 
 class StudyvalidationsController extends AppController
 {
@@ -232,20 +231,23 @@ class StudyvalidationsController extends AppController
             //Other validation that lazy to explore
             /*
              * 
+             * ===DONE
+             * alphaNumeric
+             * containsNonAlphaNumeric
+             * ascii
+             * regex
+             * minLength
+             * maxLength
              * 
+             * ===NOT DONE
              * 
              * uploadedFile
              * minLengthBytes
              * maxLengthBytes
              * 
-             * alphaNumeric
-             * containsNonAlphaNumeric
-             * ascii
+             * 
              * utf8
              * utf8Extended
-             * regex
-             * minLength
-             * maxLength
              * 
              * date
              * dateTime
@@ -301,5 +303,11 @@ class StudyvalidationsController extends AppController
              * isPresenceRequired
              */
         }
+    }
+    
+    //other validation that lazy to explore
+    public function others()
+    {
+        
     }
 }
