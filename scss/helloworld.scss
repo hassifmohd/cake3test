@@ -1,0 +1,15 @@
+/*
+run below command
+    vagrant ssh
+    cd /var/www/public/cake3test
+    sass scss/helloworld.scss webroot/css/hello_sass.css <-- generate CSS using file
+    sass scss:webroot/css <-- generate CSS using folder
+*/
+
+$font-stack: Helvetica, sans-serif;
+$background-color: beige;
+
+body {
+  font: 100% $font-stack;
+  background-color: $background-color;
+}

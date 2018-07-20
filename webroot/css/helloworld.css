@@ -1,0 +1,13 @@
+/*
+run below command
+    vagrant ssh
+    cd /var/www/public/cake3test
+    sass scss/helloworld.scss webroot/css/hello_sass.css <-- generate CSS using file
+    sass scss:webroot/css <-- generate CSS using folder
+*/
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: beige;
+}
+
+/*# sourceMappingURL=helloworld.css.map */
