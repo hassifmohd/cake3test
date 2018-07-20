@@ -5,9 +5,55 @@ run below command
     sass scss/helloworld.scss webroot/css/hello_sass.css <-- generate CSS using file
     sass scss:webroot/css <-- generate CSS using folder
 */
+/* using import feature */
+/*
+underscore_ file means is like a snippet
+it will not generate its own .css file
+but it can be use by other .scss file (using @import)
+*/
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 50px;
+}
+
+/* variable */
+/* main body */
 body {
   font: 100% Helvetica, sans-serif;
   background-color: beige;
+}
+
+/* table nest1 */
+table.nest1 {
+  width: 600px;
+  border: 1px solid black;
+}
+table.nest1 td:hover {
+  background-color: red;
+}
+
+/* mixins : declare it (note that this @mixin function will not appeard in the output later) */
+/* mixins : use it V1 */
+.boxme {
+  width: 200px;
+  text-align: center;
+  background-color: black;
+  color: beige;
+  padding: 10px;
+}
+
+/* 
+mixins : use it V2
+
+*/
+.boxyou {
+  width: 300px;
+  text-align: right;
+  color: red;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=helloworld.css.map */

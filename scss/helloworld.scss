@@ -6,10 +6,58 @@ run below command
     sass scss:webroot/css <-- generate CSS using folder
 */
 
+/* using import feature */
+@import 'reset';
+
+/* variable */
 $font-stack: Helvetica, sans-serif;
 $background-color: beige;
 
+/* main body */
 body {
   font: 100% $font-stack;
   background-color: $background-color;
+}
+
+/* table nest1 */
+table.nest1 {
+    
+    width: 600px;
+    border: 1px solid black;
+    
+    td:hover {
+        background-color: red;
+    }
+}
+
+/* mixins : declare it (note that this @mixin function will not appeard in the output later) */
+@mixin hellobox( $bg-color, $txt-color: red) {
+    background-color: $bg-color;
+    color: $txt-color;
+    padding: 10px;
+}
+
+/* mixins : use it V1 */
+.boxme { 
+    
+    //use our own styling
+    width: 200px;
+    text-align: center;
+    
+    //import styling from mixin
+    @include hellobox(black, $background-color);
+}
+
+/* 
+mixins : use it V2
+
+*/
+.boxyou { 
+    
+    //use our own styling
+    width: 300px;
+    text-align: right;
+    
+    //import styling from mixin
+    @include hellobox(null);
 }

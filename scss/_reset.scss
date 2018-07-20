@@ -1,0 +1,13 @@
+/*
+underscore_ file means is like a snippet
+it will not generate its own .css file
+but it can be use by other .scss file (using @import)
+*/
+
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 50px;
+}
