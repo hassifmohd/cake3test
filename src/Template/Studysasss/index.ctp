@@ -23,3 +23,16 @@
 
 <h2>Mixin</h2>
 <div class="boxme">HOW ARE YOU?</div>
+<div class="boxyou">HOW ARE YOU?</div>
+
+<hr/>
+
+<h2>Extend/Inheritance</h2>
+
+<button class="button-error">ERROR</button>
+
+<button class="button-warning">WARNING</button>
+
+<div class="button-good">GOOD</div>
+
+<div class="button-notice">NOTICE</div>

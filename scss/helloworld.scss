@@ -51,6 +51,9 @@ table.nest1 {
 /* 
 mixins : use it V2
 
+what will happen?
+    background color will not be generated
+    text color will default to red
 */
 .boxyou { 
     
@@ -60,4 +63,50 @@ mixins : use it V2
     
     //import styling from mixin
     @include hellobox(null);
+}
+
+/*
+Extend/Inheritance V1
+Differences between is Extend and Mixins
+is
+Mixins = attached as usual
+Extend = create new classes and group them by
+See example
+*/
+%button-style {
+    padding: 10px;
+    color: #333;
+}
+
+/*
+Extend/Inheritance V2
+You can also extend a class like below example
+*/
+.div-box {
+    padding: 5px;
+    border: 1px dashed darkgrey;
+    color: #333;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.button-error {
+    @extend %button-style;
+    background-color: plum;
+}
+
+.button-warning {
+    @extend %button-style;
+    background-color: darkorange;
+}
+
+.button-good {
+    @extend .div-box;
+    background-color: green;
+}
+
+.button-notice {
+    @extend .div-box;
+    background-color: blue;
 }

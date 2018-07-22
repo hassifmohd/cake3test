@@ -48,12 +48,53 @@ table.nest1 td:hover {
 /* 
 mixins : use it V2
 
+what will happen?
+    background color will not be generated
+    text color will default to red
 */
 .boxyou {
   width: 300px;
   text-align: right;
   color: red;
   padding: 10px;
+}
+
+/*
+Extend/Inheritance
+Differences between is Extend and Mixins
+is
+Mixins = attached as usual
+Extend = create new classes and group them by
+See example
+*/
+.button-warning, .button-error {
+  padding: 10px;
+  color: #333;
+}
+
+.div-box, .button-notice, .button-good {
+  padding: 5px;
+  border: 1px dashed darkgrey;
+  color: #333;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.button-error {
+  background-color: plum;
+}
+
+.button-warning {
+  background-color: darkorange;
+}
+
+.button-good {
+  background-color: green;
+}
+
+.button-notice {
+  background-color: blue;
 }
 
 /*# sourceMappingURL=helloworld.css.map */
