@@ -1,1 +1,3 @@
-/cake3test/nbproject/private/
+/cake3test/nbproject/
+/node_modules/
+/logs/
