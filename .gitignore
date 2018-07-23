@@ -1,3 +1,5 @@
 /cake3test/nbproject/
 /node_modules/
 /logs/
+/.idea/
+cake3test.iml
