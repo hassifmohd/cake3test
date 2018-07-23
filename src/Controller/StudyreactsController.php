@@ -31,4 +31,18 @@ class StudyreactsController extends AppController
     {
         
     }
+    
+    //Study JSX: State and Lifecycle
+    //https://reactjs.org/docs/state-and-lifecycle.html
+    public function jsxV3()
+    {
+        
+    }
+    
+    //Handling Events
+    //https://reactjs.org/docs/handling-events.html
+    public function jsxV4()
+    {
+        
+    }
 }
