@@ -45,4 +45,18 @@ class StudyreactsController extends AppController
     {
         
     }
+    
+    //Conditional Rendering
+    //https://reactjs.org/docs/conditional-rendering.html
+    public function jsxV5()
+    {
+        
+    }
+    
+    //Lists and Keys
+    //https://reactjs.org/docs/lists-and-keys.html
+    public function jsxV6()
+    {
+        
+    }
 }
