@@ -59,4 +59,18 @@ class StudyreactsController extends AppController
     {
         
     }
+
+    //Code-Splitting
+    //https://reactjs.org/docs/code-splitting.html
+    public function codesplit()
+    {
+        //unable to study here, maybe need react-app
+    }
+
+    //Context: Like global variable
+    //https://reactjs.org/docs/context.html
+    public function context()
+    {
+
+    }
 }
