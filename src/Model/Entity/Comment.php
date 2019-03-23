@@ -4,22 +4,19 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Article Entity
+ * Comment Entity
  *
  * @property int $id
+ * @property int $article_id
  * @property int $user_id
- * @property string $title
- * @property string $slug
  * @property string $body
- * @property bool $published
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
+ * @property \App\Model\Entity\Article $article
  * @property \App\Model\Entity\User $user
- * @property \App\Model\Entity\Comment[] $comments
- * @property \App\Model\Entity\Tag[] $tags
  */
-class Article extends Entity
+class Comment extends Entity
 {
 
     /**
@@ -32,15 +29,12 @@ class Article extends Entity
      * @var array
      */
     protected $_accessible = [
+        'article_id' => true,
         'user_id' => true,
-        'title' => true,
-        'slug' => true,
         'body' => true,
-        'published' => true,
         'created' => true,
         'modified' => true,
-        'user' => true,
-        'comments' => true,
-        'tags' => true
+        'article' => true,
+        'user' => true
     ];
 }
