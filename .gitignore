@@ -3,3 +3,5 @@
 /logs/
 /.idea/
 cake3test.iml
+/tmp
+/config/Migrations/schema-dump-default.lock
