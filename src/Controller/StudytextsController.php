@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use Cake\Utility\Text;
+use App\Utility\Text;
 
 class StudytextsController extends AppController {
 
@@ -159,7 +159,7 @@ class StudytextsController extends AppController {
         
         //Wrapping Text
         //https://book.cakephp.org/3.0/en/core-libraries/text.html#wrapping-text
-        if (1) {
+        if (0) {
             $text = 'This is a song that never ends.';
             
             $result = Text::wrap($text, 22);
@@ -223,6 +223,107 @@ class StudytextsController extends AppController {
             
             $result = Text::wordWrap($yearMonth, 4, '-', true);
             pr($result);
+        }
+
+        //wrapBlock
+        //https://book.cakephp.org/3.0/en/core-libraries/text.html#Cake\Utility\Text::wrapBlock
+        if(0) {
+            $text = 'The quick brown fox jumps over the lazy dog';
+            $result = Text::wrapBlock($text, [
+                'width' => 22,
+                'indent' => ' → ',
+                'indentAt' => 1,
+//                'wordWrap' => true,
+            ]);
+            pr($result);
+        }
+
+        //Highlight
+        //https://book.cakephp.org/3.0/en/core-libraries/text.html#highlighting-substrings
+        if(0) {
+            $lastSentence = "The quick <open>closed</open> brown fox jumps over the lazy dog";
+
+            $result = Text::highlight(
+                $lastSentence,
+                ['quick', 'fox', 'over', 'open'],
+                [
+                    'format' => '<b class="highlight">\1</b>',
+                    'html' => true, //set this to true|false to see the differences
+                    'limit' => 2, //<-- does not works
+                ]
+            );
+            pr($result);
+        }
+
+        //Truncating Text
+        //Truncating the Tail of a String
+        //Extracting an Excerpt
+        //https://book.cakephp.org/3.0/en/core-libraries/text.html#truncating-text
+        //https://book.cakephp.org/3.0/en/core-libraries/text.html#truncating-the-tail-of-a-string
+        //https://book.cakephp.org/3.0/en/core-libraries/text.html#extracting-an-excerpt
+        if(0) {
+                $lastSentence = "The <b>quick</b> brown fox jumps over the lazy dog";
+//            $lastSentence = "The quick brown fox jumps over the lazy dog";
+
+            $result = Text::truncate($lastSentence, 27, [
+                'html' => true, //to handle HTML tags. set true|false to see the differences
+                'ellipsis' => '|. . .|', //<-- the length is including ellipsis
+                'exact' => false,
+            ]);
+            pr($result);
+
+            $result = Text::tail($lastSentence, 27, [
+                'html' => true, //to handle HTML tags. set true|false to see the differences
+                'ellipsis' => '|. . .|', //<-- the length is including ellipsis
+                'exact' => false,
+            ]);
+            pr($result);
+
+            $result = Text::excerpt($lastSentence, 'brown', 15, '|. . .|');
+            pr($result);
+        }
+
+        //Converting an Array to Sentence Form
+        //https://book.cakephp.org/3.0/en/core-libraries/text.html#converting-an-array-to-sentence-form
+        if(0) {
+            $colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+            pr(Text::toList($colors));
+
+            $colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+            pr(Text::toList($colors, '[and last but not least]', ' + '));
+        }
+
+        //BELOW FUNCTION DID NOT MENTION IN CAKEPHP COOKBOOK
+        if(0) {
+            $text = ' <p>The <b>quick</b> brown fox jumps over the lazy dog &amp; cow </p>';
+            pr($text);
+
+            pr(strlen($text));
+
+            $result = Text::strlen($text);
+            pr($result);
+
+            $result = Text::strlen($text, [
+                'html' => true,
+                'trimWidth' => false
+            ]);
+            pr($result);
+        }
+
+        //isMultibyte
+        //utf8
+        if(1) {
+            $sentence = "The quick brown fox jumps over the lazy dog";
+            pr(Text::isMultibyte($sentence) ? 'IS MULTIBYTE' : 'NOT MULTIBYTE');
+
+            //japanese character is MULTIBYTE
+            $sentence = "GOOD MORNING おはようございます";
+            pr(Text::isMultibyte($sentence) ? 'IS MULTIBYTE' : 'NOT MULTIBYTE');
+
+            //convert to UTF8 in array. Then ARRAY back to UTF8
+            $sentence = "Gお";
+            pr(Text::utf8($sentence));
+            pr(Text::ascii(Text::utf8($sentence)));
         }
     }
 
