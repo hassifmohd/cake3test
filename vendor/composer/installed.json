@@ -931,6 +931,83 @@
         "description": "implementation of xdg base directory specification for php"
     },
     {
+        "name": "friendsofcake/cakephp-csvview",
+        "version": "3.3.2",
+        "version_normalized": "3.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/FriendsOfCake/cakephp-csvview.git",
+            "reference": "5ebd2cf1b0485075561ae7003b654f8eea0dbd5f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/FriendsOfCake/cakephp-csvview/zipball/5ebd2cf1b0485075561ae7003b654f8eea0dbd5f",
+            "reference": "5ebd2cf1b0485075561ae7003b654f8eea0dbd5f",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/cakephp": "^3.5.5",
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "cakephp/cakephp-codesniffer": "^3.0",
+            "phpunit/phpunit": "^5.7.14|^6.0"
+        },
+        "time": "2018-11-04T18:33:55+00:00",
+        "type": "cakephp-plugin",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "CsvView\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "ADmad",
+                "homepage": "https://github.com/admad",
+                "role": "Contributor"
+            },
+            {
+                "name": "Mark Scherer",
+                "homepage": "https://github.com/dereuromark",
+                "role": "Contributor"
+            },
+            {
+                "name": "Joshua Paling",
+                "homepage": "https://github.com/joshuapaling",
+                "role": "Contributor"
+            },
+            {
+                "name": "Gaurish Sharma",
+                "homepage": "https://github.com/gaurish",
+                "role": "Contributor"
+            },
+            {
+                "name": "Gregory Gaskill",
+                "homepage": "https://github.com/chronon",
+                "role": "Contributor"
+            },
+            {
+                "name": "Jose Diaz-Gonzalez",
+                "email": "email@josediazgonzalez.com",
+                "homepage": "http://josediazgonzalez.com",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "A CSV View class for CakePHP 3.x",
+        "homepage": "http://github.com/friendsofcake/cakephp-csvview",
+        "keywords": [
+            "cakephp",
+            "csv",
+            "export",
+            "view"
+        ]
+    },
+    {
         "name": "jakub-onderka/php-console-color",
         "version": "0.1",
         "version_normalized": "0.1.0.0",
