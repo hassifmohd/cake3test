@@ -26,6 +26,37 @@ class ArticlesController extends AppController
         $articles = $this->paginate($this->Articles);
 
         $this->set(compact('articles'));
+
+        //if you do cake3test/articles/index.csv will return a .csv file
+        if ($this->getRequest()->is('csv')) {
+            $_serialize = 'articles';
+            $_header = ['TITLE', 'SLUG', 'BODY', 'EMAIL'];
+            $_extract = [
+                'title',
+                'slug',
+                'body',
+                function ($articles) {
+                    return $articles['user']['email'];
+                }
+            ];
+            $this->set(compact('_serialize', '_header', '_extract', 'articles'));
+        }
+    }
+
+    /**
+     * sample CSV test
+     */
+    public function csvtest()
+    {
+        $articles = [
+            ['a', 'b', 'c'],
+            [1, 2, 3],
+            ['you', 'and', 'me'],
+        ];
+        $_serialize = 'articles';
+
+        $this->viewBuilder()->setClassName('CsvView.Csv');
+        $this->set(compact('articles', '_serialize'));
     }
 
     /**
